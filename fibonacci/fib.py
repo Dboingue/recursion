@@ -102,7 +102,7 @@ def sanity_check_args(n):
     print("Note: The maximum recursion limit is {}\n".format(recursion_limit))
     # Use sys.setrecursionlimit(value) to change recursion limit.
 
-    # NB: Dispite the default recursion limit being 1000, we may
+    # NB: Despite the default recursion limit being 1000, we may
     # not be able to do that many. However, for fib() it does not matter
     # because we will never get near the limit.
 
@@ -113,7 +113,7 @@ def sanity_check_args(n):
                2178309, 3524578, 5702887, 9227465, 14930352, 24157817,
                39088169, 63245986, 102334155]
 
-    max_n = len(fib_val)-2
+    max_n = len(fib_val) - 2
     if n > max_n:
         print("error: n must be less than {}".format(max_n))
         sys.exit(1)
