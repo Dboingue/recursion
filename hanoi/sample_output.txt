@@ -1,0 +1,259 @@
+Note: The maximum default recursion limit is 1000
+
+     |            |            |     
+    -|-           |            |     
+   --|--          |            |     
+  ---|---         |            |     
+ ----|----        |            |     
+-----|-----       |            |     
+=====================================
+Move disk number 1 on post 1 to post number 3
+     |            |            |     
+     |            |            |     
+   --|--          |            |     
+  ---|---         |            |     
+ ----|----        |            |     
+-----|-----       |           -|-    
+=====================================
+Move disk number 2 on post 1 to post number 2
+     |            |            |     
+     |            |            |     
+     |            |            |     
+  ---|---         |            |     
+ ----|----        |            |     
+-----|-----     --|--         -|-    
+=====================================
+Move disk number 1 on top on post 3 on top disk number 2 on post 2.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+  ---|---         |            |     
+ ----|----       -|-           |     
+-----|-----     --|--          |     
+=====================================
+Move disk number 3 on post 1 to post number 3
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |            |     
+ ----|----       -|-           |     
+-----|-----     --|--       ---|---  
+=====================================
+Move disk number 1 on top on post 2 on top disk number 4 on post 1.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+    -|-           |            |     
+ ----|----        |            |     
+-----|-----     --|--       ---|---  
+=====================================
+Move disk number 2 on top on post 2 on top disk number 3 on post 3.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+    -|-           |            |     
+ ----|----        |          --|--   
+-----|-----       |         ---|---  
+=====================================
+Move disk number 1 on top on post 1 on top disk number 2 on post 3.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |           -|-    
+ ----|----        |          --|--   
+-----|-----       |         ---|---  
+=====================================
+Move disk number 4 on post 1 to post number 2
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |           -|-    
+     |            |          --|--   
+-----|-----   ----|----     ---|---  
+=====================================
+Move disk number 1 on top on post 3 on top disk number 4 on post 2.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |           -|-         --|--   
+-----|-----   ----|----     ---|---  
+=====================================
+Move disk number 2 on top on post 3 on top disk number 5 on post 1.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |            |     
+   --|--         -|-           |     
+-----|-----   ----|----     ---|---  
+=====================================
+Move disk number 1 on top on post 2 on top disk number 2 on post 1.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+    -|-           |            |     
+   --|--          |            |     
+-----|-----   ----|----     ---|---  
+=====================================
+Move disk number 3 on top on post 3 on top disk number 4 on post 2.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+    -|-           |            |     
+   --|--       ---|---         |     
+-----|-----   ----|----        |     
+=====================================
+Move disk number 1 on post 1 to post number 3
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |            |     
+   --|--       ---|---         |     
+-----|-----   ----|----       -|-    
+=====================================
+Move disk number 2 on top on post 1 on top disk number 3 on post 2.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |          --|--          |     
+     |         ---|---         |     
+-----|-----   ----|----       -|-    
+=====================================
+Move disk number 1 on top on post 3 on top disk number 2 on post 2.
+     |            |            |     
+     |            |            |     
+     |           -|-           |     
+     |          --|--          |     
+     |         ---|---         |     
+-----|-----   ----|----        |     
+=====================================
+Move disk number 5 on post 1 to post number 3
+     |            |            |     
+     |            |            |     
+     |           -|-           |     
+     |          --|--          |     
+     |         ---|---         |     
+     |        ----|----   -----|-----
+=====================================
+Move disk number 1 on post 2 to post number 1
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |          --|--          |     
+     |         ---|---         |     
+    -|-       ----|----   -----|-----
+=====================================
+Move disk number 2 on top on post 2 on top disk number 5 on post 3.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |         ---|---       --|--   
+    -|-       ----|----   -----|-----
+=====================================
+Move disk number 1 on top on post 1 on top disk number 2 on post 3.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |           -|-    
+     |         ---|---       --|--   
+     |        ----|----   -----|-----
+=====================================
+Move disk number 3 on post 2 to post number 1
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |           -|-    
+     |            |          --|--   
+  ---|---     ----|----   -----|-----
+=====================================
+Move disk number 1 on top on post 3 on top disk number 4 on post 2.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |           -|-         --|--   
+  ---|---     ----|----   -----|-----
+=====================================
+Move disk number 2 on top on post 3 on top disk number 3 on post 1.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |            |     
+   --|--         -|-           |     
+  ---|---     ----|----   -----|-----
+=====================================
+Move disk number 1 on top on post 2 on top disk number 2 on post 1.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+    -|-           |            |     
+   --|--          |            |     
+  ---|---     ----|----   -----|-----
+=====================================
+Move disk number 4 on top on post 2 on top disk number 5 on post 3.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+    -|-           |            |     
+   --|--          |        ----|---- 
+  ---|---         |       -----|-----
+=====================================
+Move disk number 1 on top on post 1 on top disk number 4 on post 3.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |           -|-    
+   --|--          |        ----|---- 
+  ---|---         |       -----|-----
+=====================================
+Move disk number 2 on post 1 to post number 2
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |           -|-    
+     |            |        ----|---- 
+  ---|---       --|--     -----|-----
+=====================================
+Move disk number 1 on top on post 3 on top disk number 2 on post 2.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |           -|-       ----|---- 
+  ---|---       --|--     -----|-----
+=====================================
+Move disk number 3 on top on post 1 on top disk number 4 on post 3.
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |         ---|---  
+     |           -|-       ----|---- 
+     |          --|--     -----|-----
+=====================================
+Move disk number 1 on post 2 to post number 1
+     |            |            |     
+     |            |            |     
+     |            |            |     
+     |            |         ---|---  
+     |            |        ----|---- 
+    -|-         --|--     -----|-----
+=====================================
+Move disk number 2 on top on post 2 on top disk number 3 on post 3.
+     |            |            |     
+     |            |            |     
+     |            |          --|--   
+     |            |         ---|---  
+     |            |        ----|---- 
+    -|-           |       -----|-----
+=====================================
+Move disk number 1 on top on post 1 on top disk number 2 on post 3.
+     |            |            |     
+     |            |           -|-    
+     |            |          --|--   
+     |            |         ---|---  
+     |            |        ----|---- 
+     |            |       -----|-----
+=====================================
+It took 31 moves.
+The number of recursive calls was 31
