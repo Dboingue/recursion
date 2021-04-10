@@ -13,16 +13,15 @@ optional arguments:
 
 python simpletree.py -1 >>sample_output.txt
 error: n must be greater than 0.
-usage: simpletree.py [-h] [--max MAX] n
 
 python simpletree.py a >>sample_output.txt 2>&1
 simpletree.py: error: argument n: invalid int value: 'a'
 
 python simpletree.py --max 20 30 >>sample_output.txt 2>&1
 error: max must be at least n = 30
-Note: The maximum default recursion limit is 1000
 
 python simpletree.py --max 30 10 >>sample_output.txt 2>&1
+Note: The maximum default recursion limit is 1000
 Creating a binary tree with 10 nodes with values from 0 through 30
 Execution time in secs was 0.0
 The tree's data is ...
@@ -48,9 +47,9 @@ The tree is ...
             -
             -
 There were 9 calls to the recursive print method.
-Note: The maximum default recursion limit is 1000
 
 python simpletree.py --max 100 20 >>sample_output.txt 2>&1
+Note: The maximum default recursion limit is 1000
 Creating a binary tree with 20 nodes with values from 0 through 100
 Execution time in secs was 0.0
 The tree's data is ...
