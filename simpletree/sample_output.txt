@@ -1,0 +1,100 @@
+python simpletree.py -h >sample_output.txt
+usage: simpletree.py [-h] [--max MAX] n
+
+Creates a binary tree with n nodes with values 0 through n-1. If max is
+specified then n values are chosen randomly between 0 and max inclusive.
+
+positional arguments:
+  n           number of nodes
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --max MAX   maximum value for nodes
+
+python simpletree.py -1 >>sample_output.txt
+error: n must be greater than 0.
+usage: simpletree.py [-h] [--max MAX] n
+
+python simpletree.py a >>sample_output.txt 2>&1
+simpletree.py: error: argument n: invalid int value: 'a'
+
+python simpletree.py --max 20 30 >>sample_output.txt 2>&1
+error: max must be at least n = 30
+Note: The maximum default recursion limit is 1000
+
+python simpletree.py --max 30 10 >>sample_output.txt 2>&1
+Creating a binary tree with 10 nodes with values from 0 through 30
+Execution time in secs was 0.0
+The tree's data is ...
+1 4 9 12 18 25 26 28 29
+The tree is ...
+12
+    4
+        1
+            -
+            -
+        9
+            -
+            -
+    28
+        26
+            25
+                18
+                    -
+                    -
+                -
+            -
+        29
+            -
+            -
+There were 9 calls to the recursive print method.
+Note: The maximum default recursion limit is 1000
+
+python simpletree.py --max 100 20 >>sample_output.txt 2>&1
+Creating a binary tree with 20 nodes with values from 0 through 100
+Execution time in secs was 0.0
+The tree's data is ...
+10 20 27 44 46 49 50 51 55 60 65 67 72 74 77 78 81 83 93 94
+The tree is ...
+60
+    44
+        27
+            10
+                -
+                20
+                    -
+                    -
+            -
+        49
+            46
+                -
+                -
+            50
+                -
+                51
+                    -
+                    55
+                        -
+                        -
+    78
+        74
+            67
+                65
+                    -
+                    -
+                72
+                    -
+                    -
+            77
+                -
+                -
+        93
+            81
+                -
+                83
+                    -
+                    -
+            94
+                -
+                -
+There were 20 calls to the recursive print method.

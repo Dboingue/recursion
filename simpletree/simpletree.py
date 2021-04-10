@@ -91,13 +91,14 @@ def run(n, m):
     print("Creating a binary tree with {} nodes".format(n),
           "with values from 0 through {}".format(m))
     start_time = time.time()
+    # TODO: Add an option to use a fixed sample instead of a random one
+    #       for debugging purposes.
     my_sample = random.sample(range(m), n)
     # To balance the tree we want the root's value to be the low median
     # of the sample. The low median is always a member of the list.
     my_low_median = statistics.median_low(my_sample)
     my_tree = Node(my_low_median)
-    # Non random for debugging.
-    # my_sample = [3, 5, 2, 7, 1, 0, 4, 7, 6, 8]
+
     for i in my_sample:
         my_tree.insert(i)
     end_time = time.time()
@@ -148,10 +149,11 @@ def sanity_check_args(n, args):
         sys.exit(1)
 
     recursion_limit = sys.getrecursionlimit()
-    print("Note: The maximum recursion limit is {}\n".format(recursion_limit))
+    print("Note: The maximum default recursion limit is",
+          "{}\n".format(recursion_limit))
     # Use sys.setrecursionlimit(value) to change recursion limit.
 
-    # NB: Dispite the default recursion limit being 1000 we do not usual get
+    # NB: Despite the default recursion limit being 1000 we do not usual get
     # that many stack frames at once. The reason is that the tree was
     # balanced by putting the midpoint value at the root. The maximum
     # number of recursive calls would be determined by the height of the
