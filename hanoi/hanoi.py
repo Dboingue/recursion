@@ -273,7 +273,7 @@ def move_disk(start_post, end_post):
 
 def transfer_stack(start_post, end_post, intermediate_post, size):
     """ Transfer the stack of disks on post 'start_post' to post
-        'end_post' using post 'intermediatePost'.
+        'end_post' using post 'intermediate_post'.
         The number of disks to move is given by 'size'.
      """
     global recursive_count
