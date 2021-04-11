@@ -367,4 +367,3 @@ def main():
 if __name__ == '__main__':
     # Call main() if run from command line.
     main()
-
