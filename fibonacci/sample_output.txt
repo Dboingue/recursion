@@ -1,0 +1,73 @@
+>python fib.py -h
+usage: fib.py [-h] n
+
+Computes fib(n)
+
+positional arguments:
+  n           argument of fib function
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+>python fib.py a
+usage: fib.py [-h] n
+fib.py: error: argument n: invalid int value: 'a'
+
+>python fib.py -1
+error: n must be greater than or equal to 0
+
+>python fib.py 0
+Note: The maximum default recursion limit is 1000
+
+Computing fib_iterative(0)
+The fib of 0 is 0
+Execution time in secs was 0.0
+
+Computing fib_recursive(0)
+The fib of 0 is 0
+The number of recursive calls was 1
+Execution time in secs was 0.0
+
+>python fib.py 10
+Note: The maximum default recursion limit is 1000
+
+Computing fib_iterative(10)
+The fib of 10 is 55
+Execution time in secs was 0.0
+
+Computing fib_recursive(10)
+The fib of 10 is 55
+The number of recursive calls was 177
+Execution time in secs was 0.0
+
+>python fib.py 50
+Note: The maximum default recursion limit is 1000
+
+error: n must be less than 39
+
+>python fib.py 30
+Note: The maximum default recursion limit is 1000
+
+Computing fib_iterative(30)
+The fib of 30 is 832040
+Execution time in secs was 0.0
+
+Computing fib_recursive(30)
+The fib of 30 is 832040
+The number of recursive calls was 2692537
+Execution time in secs was 2.1157922744750977
+>python fib.py 31
+Note: The maximum default recursion limit is 1000
+
+**********
+warning: The value of Fib(31) will take 4356617 recursive calls!
+**********
+
+Computing fib_iterative(31)
+The fib of 31 is 1346269
+Execution time in secs was 0.0
+
+Computing fib_recursive(31)
+The fib of 31 is 1346269
+The number of recursive calls was 4356617
+Execution time in secs was 3.3939075469970703
