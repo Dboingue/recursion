@@ -1,4 +1,4 @@
-python simpletree.py -h >sample_output.txt
+>python simpletree.py -h
 usage: simpletree.py [-h] [--max MAX] n
 
 Creates a binary tree with n nodes with values 0 through n-1. If max is
@@ -11,89 +11,94 @@ optional arguments:
   -h, --help  show this help message and exit
   --max MAX   maximum value for nodes
 
-python simpletree.py -1 >>sample_output.txt
-error: n must be greater than 0.
-
-python simpletree.py a >>sample_output.txt 2>&1
+>python simpletree.py a
+usage: simpletree.py [-h] [--max MAX] n
 simpletree.py: error: argument n: invalid int value: 'a'
 
-python simpletree.py --max 20 30 >>sample_output.txt 2>&1
+>python simpletree.py -1
+error: n must be greater than 0.
+
+>python simpletree.py --max 20 30
 error: max must be at least n = 30
 
-python simpletree.py --max 30 10 >>sample_output.txt 2>&1
+>python simpletree.py --max 30 10
 Note: The maximum default recursion limit is 1000
+
 Creating a binary tree with 10 nodes with values from 0 through 30
 Execution time in secs was 0.0
 The tree's data is ...
-1 4 9 12 18 25 26 28 29
+5 9 10 11 12 13 16 18 20 24
 The tree is ...
 12
-    4
-        1
-            -
-            -
+    10
         9
+            5
+                -
+                -
+            -
+        11
             -
             -
-    28
-        26
-            25
-                18
+    20
+        13
+            -
+            18
+                16
                     -
                     -
                 -
+        24
             -
-        29
             -
-            -
-There were 9 calls to the recursive print method.
+There were 10 calls to the recursive print method.
 
-python simpletree.py --max 100 20 >>sample_output.txt 2>&1
+>python simpletree.py --max 100 20
 Note: The maximum default recursion limit is 1000
+
 Creating a binary tree with 20 nodes with values from 0 through 100
-Execution time in secs was 0.0
+Execution time in secs was 0.000995635986328125
 The tree's data is ...
-10 20 27 44 46 49 50 51 55 60 65 67 72 74 77 78 81 83 93 94
+8 12 16 20 22 24 41 51 54 55 58 59 66 67 70 83 85 89 90 94
 The tree is ...
-60
-    44
-        27
-            10
+55
+    20
+        8
+            -
+            12
                 -
-                20
+                16
+                    -
+                    -
+        22
+            -
+            24
+                -
+                54
+                    51
+                        41
+                            -
+                            -
+                        -
+                    -
+    67
+        59
+            58
+                -
+                -
+            66
+                -
+                -
+        94
+            89
+                83
+                    70
+                        -
+                        -
+                    85
+                        -
+                        -
+                90
                     -
                     -
             -
-        49
-            46
-                -
-                -
-            50
-                -
-                51
-                    -
-                    55
-                        -
-                        -
-    78
-        74
-            67
-                65
-                    -
-                    -
-                72
-                    -
-                    -
-            77
-                -
-                -
-        93
-            81
-                -
-                83
-                    -
-                    -
-            94
-                -
-                -
 There were 20 calls to the recursive print method.
