@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 """Python program to find the number of steps to reach 1 for the Collatz
    problem for user supplied value of n.
-   A plot of sequence number versus sequence value is also created.
+   A plot of sequence index versus sequence value is also created.
    For background on the Collatz Conjecture see:
    https://en.wikipedia.org/wiki/Collatz_conjecture
    Version 1.0
@@ -49,6 +49,16 @@ import matplotlib.pyplot as plt
 # -------------------------------------------------------------------------
 
 # Count the number of recursive calls.
+# Note: This may not be the number of simultaneous frames on the call stack!
+#       In fact, the way this is coded, the recursive function is at most
+#       on the call stack collatz(n) times at any one time. It takes
+#       a very large number n to exceed the Python default recursive stack
+#       maximum of 1000.
+#       n = 670,617,279 has 986 steps, while
+#       n = 9,780,657,630 has 1132 steps.
+#       Hence, someplace between those two values the maximum will be
+#       exceeded.
+# TODO: Except that did not happen! So why was the max not exceeded?
 recursive_count = 0
 
 
@@ -220,13 +230,16 @@ def sanity_check_args(n):
           "{}\n".format(recursion_limit))
     # Use sys.setrecursionlimit(value) to change recursion limit.
 
-    # NB: Despite the default recursion limit being 1000, doing 995
-    # recursive calls causes an exception to be raised! Hence, the
-    # limit for n is 994.
-    # max_n = 994
-    # if n > max_n:
-    #     print("error: n must be less than {}".format(max_n))
-    #     sys.exit(1)
+    # NB: Despite the default recursion limit being 1000, we will not
+    # exceed the default python recursion limit except for very large n.
+    # n = 670,617,279 has 986 steps. Hence on the stack that many times.
+    # n = 9,780,657,630 has 1132 steps.
+    # max_n = 670617279
+    # max_n = 9780657630
+    max_n = 931386509544713451
+    if n > max_n:
+        print("error: n must be less than {}".format(max_n))
+        sys.exit(1)
 
 
 def run_with_args(args):
