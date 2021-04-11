@@ -8,7 +8,7 @@ import argparse
 import sys
 import time
 
-# Count the number of recursive calls.
+# Count the number of recursive calls to the recursive function.
 recursive_count = 0
 
 
