@@ -100,7 +100,7 @@ def sanity_check_args(n):
 
     recursion_limit = sys.getrecursionlimit()
     print("Note: The maximum default recursion limit is",
-          "{}\n".format(recursion_limit))
+         "{}\n".format(recursion_limit))
     # Use sys.setrecursionlimit(value) to change recursion limit.
 
     # NB: Despite the default recursion limit being 1000, we may
