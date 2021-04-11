@@ -1,0 +1,58 @@
+>python factorial.py -h
+usage: factorial.py [-h] n
+
+Computes factorial(n)
+
+positional arguments:
+  n           argument of factorial function
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+>python factorial.py a
+usage: factorial.py [-h] n
+factorial.py: error: argument n: invalid int value: 'a'
+
+>python factorial.py -1
+error: n must be greater than or equal to 0
+
+>python factorial.py 0
+Note: The maximum recursion limit is by default 1000
+
+Computing factorial_iterative(0)
+The factorial of 0 is 1
+Execution time in secs was 0.0
+
+Computing factorial_recursive(0)
+The factorial of 0 is 1
+The number of recursive calls was 1
+Execution time in secs was 0.0
+
+>python factorial.py 10
+Note: The maximum recursion limit is by default 1000
+
+Computing factorial_iterative(10)
+The factorial of 10 is 3628800
+Execution time in secs was 0.0
+
+Computing factorial_recursive(10)
+The factorial of 10 is 3628800
+The number of recursive calls was 11
+Execution time in secs was 0.0
+
+>python factorial.py 100
+Note: The maximum recursion limit is by default 1000
+
+Computing factorial_iterative(100)
+The factorial of 100 is 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
+Execution time in secs was 0.0
+
+Computing factorial_recursive(100)
+The factorial of 100 is 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
+The number of recursive calls was 101
+Execution time in secs was 0.0
+
+>python factorial.py 1000
+Note: The maximum recursion limit is by default 1000
+
+error: n must be less than 994
