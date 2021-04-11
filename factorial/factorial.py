@@ -89,7 +89,7 @@ def sanity_check_args(n):
           "{}\n".format(recursion_limit))
     # Use sys.setrecursionlimit(value) to change recursion limit.
 
-    # NB: Dispite the default recursion limit being 1000, doing 995
+    # NB: Despite the default recursion limit being 1000, doing 995
     # recursive calls causes an exception to be raised! Hence, the
     # limit for n is 994.
     max_n = 994
