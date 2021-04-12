@@ -48,17 +48,16 @@ import matplotlib.pyplot as plt
 # 
 # -------------------------------------------------------------------------
 
-# Count the number of recursive calls.
-# Note: This may not be the number of simultaneous frames on the call stack!
+# Count the *total* number of recursive calls.
+# Note: This is not the number of simultaneous frames on the call stack!
 #       In fact, the way this is coded, the recursive function is at most
-#       on the call stack collatz(n) times at any one time. It takes
+#       on the call stack collatz(n)+1 times at any one time. It takes
 #       a very large number n to exceed the Python default recursive stack
 #       maximum of 1000.
 #       n = 670,617,279 has 986 steps, while
 #       n = 9,780,657,630 has 1132 steps.
 #       Hence, someplace between those two values the maximum will be
 #       exceeded.
-# TODO: Except that did not happen! So why was the max not exceeded?
 recursive_count = 0
 
 
@@ -75,18 +74,20 @@ def f_op(n):
         return 3 * n + 1
 
 
-def s_seq_recursive(i, n):
+def s_seq_recursive(i, n, rec_stack_count):
     """The ith term of the Collatz sequence for positive integer n."""
 
     global recursive_count
 
     assert n > 0
 
+    rec_stack_count += 1
     recursive_count += 1
     if i == 0:
-        return n
+        return n, rec_stack_count
     else:
-        return f_op(s_seq_recursive(i - 1, n))
+        v, rec_stack_count = s_seq_recursive(i - 1, n, rec_stack_count)
+        return f_op(v), rec_stack_count
 
 
 def s_seq_iterative(i, n):
@@ -106,11 +107,16 @@ def collatz_recursive(n):
     assert n > 0
 
     i = 0
-    value = s_seq_recursive(i, n)
+    max_rec_stack = 0
+    current_rec_stack = 0
+    value, current_rec_stack = s_seq_recursive(i, n, current_rec_stack)
+    max_rec_stack = max(max_rec_stack, current_rec_stack)
     while value != 1:
         i += 1
-        value = s_seq_recursive(i, n)
-    return i
+        current_rec_stack = 0
+        value, current_rec_stack = s_seq_recursive(i, n, current_rec_stack)
+        max_rec_stack = max(max_rec_stack, current_rec_stack)
+    return i, max_rec_stack
 
 
 def collatz_iterative(n):
@@ -144,6 +150,10 @@ def do_plotting(n):
 
     assert n > 0
 
+    # TODO: Instead of repeating this part of collatz_smart, change
+    # collatz_smart to save the values in sequence_of_values as a global
+    # or have that variable returned from collatz_smart as a second return
+    # value and then passed into do_plotting.
     i = 0
     value = n
     sequence_of_values = [n]
@@ -189,10 +199,13 @@ def run(n):
     print("Computing collatz_recursive({})".format(n))
     start_time = time.time()
     try:
-        collatz = collatz_recursive(n)
+        collatz, rec_stack_count = collatz_recursive(n)
         print("The collatz of {}".format(n), "is {}".format(collatz))
+        print("s_seq_recursive was on the stack a maximum of",
+              "{} times.".format(rec_stack_count))
     except RecursionError:
         print("Too many recursive calls.")
+        sys.exit(1)
     end_time = time.time()
 
     print("The number of recursive calls was {}".format(recursive_count))
@@ -232,11 +245,9 @@ def sanity_check_args(n):
 
     # NB: Despite the default recursion limit being 1000, we will not
     # exceed the default python recursion limit except for very large n.
-    # n = 670,617,279 has 986 steps. Hence on the stack that many times.
+    # n = 670,617,279 has 986 steps. Hence on the stack that many times +1.
     # n = 9,780,657,630 has 1132 steps.
-    # max_n = 670617279
-    # max_n = 9780657630
-    max_n = 931386509544713451
+    max_n = 670617279
     if n > max_n:
         print("error: n must be less than {}".format(max_n))
         sys.exit(1)
