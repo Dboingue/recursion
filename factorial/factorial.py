@@ -9,6 +9,9 @@ import sys
 import time
 
 # Count the number of recursive calls to the recursive function.
+# This is not the count of function calls on the stack! That's because
+# Python internal functions and other functions of this code could be
+# on the stack when the recursive function is called.
 recursive_count = 0
 
 
@@ -91,7 +94,14 @@ def sanity_check_args(n):
 
     # NB: Despite the default recursion limit being 1000, doing 995
     # recursive calls causes an exception to be raised! Hence, the
-    # limit for n is 994.
+    # limit for n is 994. It seems the reason for this is because
+    # Python is counting everything on the stack; not just the recursive
+    # function. Looking at the stack in the debugger when factorial_recursive
+    # is first called, I see 4 other functions on the stack already;
+    # factorial.py, main, run_with_args, and run.
+    # So 1000 - 4 = 996. So once 995 calls are on the stack, we have
+    # 999 calls on the stack and the next function added would bring the
+    # total to 1000.
     max_n = 994
     if n > max_n:
         print("error: n must be less than {}".format(max_n))
