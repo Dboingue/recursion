@@ -38,7 +38,8 @@ import sys
 # ----------------------------------------------------------------------
 # Global Constants.
 # The maximum number of disks.
-_MAX_DISKS = 10
+# Set to something reasonable!
+_MAX_DISKS = 15
 # The maximum number of posts. (The number of posts is set to the maximum
 # and is assumed to be 3.)
 _MAX_POSTS = 3
@@ -337,9 +338,13 @@ def sanity_check_args(n):
     # Use sys.setrecursionlimit(value) to change recursion limit.
 
     # NB: Despite the default recursion limit being 1000, we may
-    # not be able to do that many.
-    # TODO: Warn about big n!
-    max_n = 999
+    # not be able to do that many. Debugger inspection shows that
+    # when transfer_stack is first called there are already 4 function calls
+    # on the stack. Hence, with a default limit by Python of 1000, we
+    # can only do 994. Of course that is a ridiculous number of disks because
+    # the answer will take too long to print anyway! Hence, let's set the
+    # limit to something reasonable.
+    max_n = _MAX_DISKS
     if n > max_n:
         print("error: n must be less than {}".format(max_n))
         sys.exit(1)

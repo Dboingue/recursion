@@ -20,7 +20,7 @@ error: n must be greater than 0
 error: n must be greater than 0
 
 >python hanoi.py 20
-error: n must be less than 11.
+error: n must be less than 16.
 
 >python hanoi.py 5
 Note: The maximum default recursion limit is 1000
