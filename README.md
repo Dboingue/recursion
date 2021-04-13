@@ -8,7 +8,6 @@ Dependencies:
 - Python version 3.8.2.
 - Packages:
 Package         Version
---------------- -------
 matplotlib      3.4.1
 numpy           1.20.2
 
