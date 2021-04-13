@@ -4,6 +4,7 @@ import argparse
 import sys
 import time
 import numpy as np
+from matplotlib.backends.backend_pdf import PdfPages
 import matplotlib.pyplot as plt
 
 """Python program to find the number of steps to reach 1 for the Collatz
@@ -155,23 +156,29 @@ def do_plotting(n, sequence_of_values):
 
     assert n > 0
 
-    # The sequence length is one more than the collatz value because
-    # numpy starts counting at 1 instead of 0.
-    sequence_length = len(sequence_of_values)
-    # x values are [1, sequence_length]
-    # Y values are the values in sequence_of_values
-    x_values = np.linspace(1, sequence_length,
-                           num=sequence_length, endpoint=True)
-    y_values = np.array(sequence_of_values)
-    plt.plot(x_values, y_values, color="blue", linewidth=2.5, linestyle="-")
-    plt.xlim(0, x_values.max()*1.1)
-    # plt.xticks()
-    plt.ylim(0, y_values.max()*1.1)
-    # plt.yticks()
-    plt.xlabel("Sequence index")
-    plt.ylabel("Sequence value")
-    plt.title("Collatz Sequence {}".format(n), loc='center')
-    plt.show()
+    # Save the plot to a PDF file as well as displaying interactively.
+    pdf_file = "collatz_plot_{}.pdf".format(n)
+    print("Plot will be saved to file {}".format(pdf_file))
+    with PdfPages(pdf_file) as pdf:
+        # The sequence length is one more than the collatz value because
+        # numpy starts counting at 1 instead of 0.
+        sequence_length = len(sequence_of_values)
+        # x values are [1, sequence_length]
+        # Y values are the values in sequence_of_values
+        x_values = np.linspace(1, sequence_length,
+                               num=sequence_length, endpoint=True)
+        y_values = np.array(sequence_of_values)
+        plt.plot(x_values, y_values, color="blue", linewidth=2.5, linestyle="-")
+        plt.xlim(0, x_values.max()*1.1)
+        # plt.xticks()
+        plt.ylim(0, y_values.max()*1.1)
+        # plt.yticks()
+        plt.xlabel("Sequence index")
+        plt.ylabel("Sequence value")
+        plt.title("Collatz Sequence {}".format(n), loc='center')
+        pdf.savefig()
+        plt.show()
+        plt.close()
 
 
 def run(n):
@@ -231,8 +238,8 @@ def sanity_check_args(n):
         print('error: {}'.format(n), ' is not a number.')
         sys.exit(1)
 
-    if n < 0:
-        print('error: n must be greater than or equal to 0')
+    if n <= 0:
+        print('error: n must be greater than 0')
         sys.exit(1)
 
     recursion_limit = sys.getrecursionlimit()

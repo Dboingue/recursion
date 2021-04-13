@@ -1,0 +1,79 @@
+>python collatz.py -h
+usage: collatz.py [-h] n
+
+Computes collatz(n)
+
+positional arguments:
+  n           argument of collatz function
+
+optional arguments:
+  -h, --help  show this help message and exit
+
+>python collatz.py a
+usage: collatz.py [-h] n
+collatz.py: error: argument n: invalid int value: 'a'
+
+>python collatz.py -1
+error: n must be greater than 0
+
+>python collatz.py 0
+error: n must be greater than 0
+
+>python collatz.py 16
+Note: The maximum recursion limit is by default 1000
+
+Computing collatz_smart(16)
+The collatz of 16 is 4
+Execution time in secs was 0.0
+
+Computing collatz_iterative(16)
+The collatz of 16 is 4
+Execution time in secs was 0.0
+
+Computing collatz_recursive(16)
+The collatz of 16 is 4
+s_seq_recursive was on the stack a maximum of 5 times.
+The number of recursive calls was 15
+Execution time in secs was 0.0
+Plot will be saved to file collatz_plot_16.pdf
+
+>python collatz.py 27
+Note: The maximum recursion limit is by default 1000
+
+Computing collatz_smart(27)
+The collatz of 27 is 111
+Execution time in secs was 0.0
+
+Computing collatz_iterative(27)
+The collatz of 27 is 111
+Execution time in secs was 0.005995988845825195
+
+Computing collatz_recursive(27)
+The collatz of 27 is 111
+s_seq_recursive was on the stack a maximum of 112 times.
+The number of recursive calls was 6328
+Execution time in secs was 0.018009662628173828
+Plot will be saved to file collatz_plot_27.pdf
+
+>python collatz.py 670617279
+Note: The maximum recursion limit is by default 1000
+
+Computing collatz_smart(670617279)
+The collatz of 670617279 is 986
+Execution time in secs was 0.0019979476928710938
+
+Computing collatz_iterative(670617279)
+The collatz of 670617279 is 986
+Execution time in secs was 0.5836431980133057
+
+Computing collatz_recursive(670617279)
+The collatz of 670617279 is 986
+s_seq_recursive was on the stack a maximum of 987 times.
+The number of recursive calls was 487578
+Execution time in secs was 1.1173710823059082
+Plot will be saved to file collatz_plot_670617279.pdf
+
+>python collatz.py 670617280
+Note: The maximum recursion limit is by default 1000
+
+error: n must be less than 670617279
