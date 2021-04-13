@@ -133,27 +133,12 @@ def collatz_iterative(n):
 
 
 def collatz_smart(n):
-    """Computes collatz(n) smartly."""
+    """ Computes collatz(n) smartly.
+        Also returns all the sequence values.
+    """
 
     assert n > 0
 
-    i = 0
-    value = n
-    while value != 1:
-        i += 1
-        value = f_op(value)
-    return i
-
-
-def do_plotting(n):
-    """Plot the values of the sequence for the Collatz n problem."""
-
-    assert n > 0
-
-    # TODO: Instead of repeating this part of collatz_smart, change
-    # collatz_smart to save the values in sequence_of_values as a global
-    # or have that variable returned from collatz_smart as a second return
-    # value and then passed into do_plotting.
     i = 0
     value = n
     sequence_of_values = [n]
@@ -161,10 +146,22 @@ def do_plotting(n):
         i += 1
         value = f_op(value)
         sequence_of_values.append(value)
+    return i, sequence_of_values
 
-    # x values are [1, i+1]
+
+# noinspection SpellCheckingInspection
+def do_plotting(n, sequence_of_values):
+    """Plot the values of the sequence for the Collatz n problem."""
+
+    assert n > 0
+
+    # The sequence length is one more than the collatz value because
+    # numpy starts counting at 1 instead of 0.
+    sequence_length = len(sequence_of_values)
+    # x values are [1, sequence_length]
     # Y values are the values in sequence_of_values
-    x_values = np.linspace(1, i+1, num=i+1, endpoint=True)
+    x_values = np.linspace(1, sequence_length,
+                           num=sequence_length, endpoint=True)
     y_values = np.array(sequence_of_values)
     plt.plot(x_values, y_values, color="blue", linewidth=2.5, linestyle="-")
     plt.xlim(0, x_values.max()*1.1)
@@ -182,7 +179,7 @@ def run(n):
 
     print("Computing collatz_smart({})".format(n))
     start_time = time.time()
-    collatz = collatz_smart(n)
+    collatz, sequence_of_values = collatz_smart(n)
     end_time = time.time()
     print("The collatz of {}".format(n), "is {}".format(collatz))
     print("Execution time in secs was {}".format(end_time-start_time))
@@ -211,7 +208,7 @@ def run(n):
     print("The number of recursive calls was {}".format(recursive_count))
     print("Execution time in secs was {}".format(end_time-start_time))
 
-    do_plotting(n)
+    do_plotting(n, sequence_of_values)
 
 
 def check_num(s):
