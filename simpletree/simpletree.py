@@ -70,7 +70,7 @@ class Node:
             Data is never entered more than once in the tree.
         """
 
-        if self.data:
+        if self.data != data:
             if data < self.data:
                 if self.left is None:
                     self.left = Node(data)
@@ -81,19 +81,27 @@ class Node:
                     self.right = Node(data)
                 else:
                     self.right.insert(data)
-        else:
-            self.data = data
 
 
-def run(n, m):
-    """Run the program with arguments checked."""
+def run(n, m, use_debug_problem=False):
+    """ Create a binary tree with n nodes with random values from 0
+        through m-1. If use_debug_problem is True then the m is ignored
+        and the values are 0 through n-1.
+    """
 
-    print("Creating a binary tree with {} nodes".format(n),
-          "with values from 0 through {}".format(m))
     start_time = time.time()
-    # TODO: Add an option to use a fixed sample instead of a random one
-    #       for debugging purposes.
-    my_sample = random.sample(range(m), n)
+
+    if use_debug_problem:
+        print("Creating a binary tree with {} nodes".format(n),
+              "with values from 0 through {}".format(n-1))
+        my_sample = list(range(0, n))
+        if m > n:
+            print("Maximum value {} ignored!".format(m))
+    else:
+        print("Creating a binary tree with {} nodes".format(n),
+              "with values from 0 through {}".format(m-1))
+        my_sample = random.sample(range(m), n)
+
     # To balance the tree we want the root's value to be the low median
     # of the sample. The low median is always a member of the list.
     my_low_median = statistics.median_low(my_sample)
@@ -172,7 +180,10 @@ def run_with_args(args):
     m = n
     if args.max:
         m = int(args.max)
-    run(n, m)
+    use_debug_problem = False
+    if args.use_debug_problem:
+        use_debug_problem = True
+    run(n, m, use_debug_problem=use_debug_problem)
 
 
 def main():
@@ -182,11 +193,13 @@ def main():
             description="Creates a binary tree with n nodes with values "
                         + "0 through n-1. "
                         + "If max is specified then n values are chosen "
-                        + "randomly between 0 and max inclusive.")
+                        + "randomly between 0 and max-1 inclusive.")
     parser.add_argument('n', type=int,
                         help="number of nodes")
     parser.add_argument('--max', type=int,
                         help="maximum value for nodes")
+    parser.add_argument('--use_debug_problem', action='store_true',
+                        help="use a special problem for debugging")
     parser.set_defaults(func=run_with_args)
     args = parser.parse_args()
     args.func(args)

@@ -1,104 +1,142 @@
 >python simpletree.py -h
-usage: simpletree.py [-h] [--max MAX] n
+usage: simpletree.py [-h] [--max MAX] [--use_debug_problem] n
 
 Creates a binary tree with n nodes with values 0 through n-1. If max is
-specified then n values are chosen randomly between 0 and max inclusive.
+specified then n values are chosen randomly between 0 and max-1 inclusive.
 
 positional arguments:
-  n           number of nodes
+  n                    number of nodes
 
 optional arguments:
-  -h, --help  show this help message and exit
-  --max MAX   maximum value for nodes
+  -h, --help           show this help message and exit
+  --max MAX            maximum value for nodes
+  --use_debug_problem  use a special problem for debugging
 
 >python simpletree.py a
-usage: simpletree.py [-h] [--max MAX] n
+usage: simpletree.py [-h] [--max MAX] [--use_debug_problem] n
 simpletree.py: error: argument n: invalid int value: 'a'
 
 >python simpletree.py -1
 error: n must be greater than 0.
 
+>python simpletree.py 0
+error: n must be greater than 0.
+
 >python simpletree.py --max 20 30
 error: max must be at least n = 30
+
+>python simpletree.py 1
+Note: The maximum default recursion limit is 1000
+
+Creating a binary tree with 1 nodes with values from 0 through 0
+Execution time in secs was 0.0
+The tree's data is ...
+0
+The tree is ...
+0
+    -
+    -
+There were 1 calls to the recursive print method.
+
+>python simpletree.py 5
+Note: The maximum default recursion limit is 1000
+
+Creating a binary tree with 5 nodes with values from 0 through 4
+Execution time in secs was 0.0
+The tree's data is ...
+0 1 2 3 4
+The tree is ...
+2
+    0
+        -
+        1
+            -
+            -
+    3
+        -
+        4
+            -
+            -
+There were 5 calls to the recursive print method.
 
 >python simpletree.py --max 30 10
 Note: The maximum default recursion limit is 1000
 
-Creating a binary tree with 10 nodes with values from 0 through 30
+Creating a binary tree with 10 nodes with values from 0 through 29
 Execution time in secs was 0.0
 The tree's data is ...
-5 9 10 11 12 13 16 18 20 24
+3 8 11 14 17 21 23 26 27 28
 The tree is ...
-12
-    10
-        9
-            5
+17
+    14
+        8
+            3
                 -
                 -
+            11
+                -
+                -
+        -
+    21
+        -
+        23
             -
-        11
-            -
-            -
-    20
-        13
-            -
-            18
-                16
+            27
+                26
                     -
                     -
-                -
-        24
-            -
-            -
+                28
+                    -
+                    -
 There were 10 calls to the recursive print method.
 
 >python simpletree.py --max 100 20
 Note: The maximum default recursion limit is 1000
 
-Creating a binary tree with 20 nodes with values from 0 through 100
-Execution time in secs was 0.000995635986328125
+Creating a binary tree with 20 nodes with values from 0 through 99
+Execution time in secs was 0.0
 The tree's data is ...
-8 12 16 20 22 24 41 51 54 55 58 59 66 67 70 83 85 89 90 94
+6 23 24 26 28 29 40 43 44 46 51 60 71 73 77 78 79 90 94 98
 The tree is ...
-55
-    20
-        8
-            -
-            12
+46
+    29
+        23
+            6
                 -
-                16
-                    -
-                    -
-        22
-            -
+                -
             24
                 -
-                54
-                    51
-                        41
+                28
+                    26
+                        -
+                        -
+                    -
+        43
+            40
+                -
+                -
+            44
+                -
+                -
+    78
+        51
+            -
+            60
+                -
+                77
+                    73
+                        71
                             -
                             -
                         -
                     -
-    67
-        59
-            58
-                -
-                -
-            66
-                -
-                -
-        94
-            89
-                83
-                    70
-                        -
-                        -
-                    85
-                        -
-                        -
-                90
+        98
+            94
+                79
                     -
-                    -
+                    90
+                        -
+                        -
+                -
             -
 There were 20 calls to the recursive print method.
