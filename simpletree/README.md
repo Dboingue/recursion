@@ -1,5 +1,5 @@
 <h1>A Simple Binary Tree Example</h1>
-This subproject is an example of using recursive programming to define, initialize, and print in various ways, a binary tree.
+This subproject is an example of using recursive programming to define, initialize, and print, in various ways, a binary tree.
 
 <h2>Usage</h2>
 
