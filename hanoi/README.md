@@ -2,7 +2,7 @@
 
 See: https://en.wikipedia.org/wiki/Tower_of_Hanoi
 
-<h2>Usage<h2>
+<h2>Usage</h2>
 
 > usage: hanoi.py [-h] n
 > 
