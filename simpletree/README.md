@@ -9,9 +9,13 @@ This subproject is an example of using recursive programming to define, initiali
 > randomly between 0 and max-1 inclusive.
 > 
 > positional arguments:
+> 
 >   n                    number of nodes
 > 
 > optional arguments:
+> 
 >   -h, --help           show this help message and exit
+>   
 >   --max MAX            maximum value for nodes
+>   
 >   --use_debug_problem  use a special problem for debugging
