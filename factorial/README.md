@@ -12,6 +12,21 @@ Note that there are multiple definitions for "function" as well as for "recursio
 While factorial(n) may first be thought of as the product of all positive integers less than or equal to n, it is useful to have factorial(0) defined. The reasons are well explained on the Wikipedia link above. Hence, with N being the natural numbers, and N+ being the positive integers, we have factorial:N -> N+ defined recursively as
 factorial(0) = 1 and for n > 0, factorial(n) = n* factorial(n-1). That is, the domain of factorial is N, and its codomain is N+.
 
+<h2>Usage</h2
+
+````
+python factorial.py -h
+usage: factorial.py [-h] n
+
+Computes factorial(n)
+
+positional arguments:
+  n           argument of factorial function
+
+optional arguments:
+  -h, --help  show this help message and exit
+````
+
 <h2>Computer Limitations</h2>
 Computer limitations cause a few issues with programming the factorial function.
 
