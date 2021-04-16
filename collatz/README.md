@@ -5,7 +5,7 @@ Starting with any positive integer n as the first value of the sequence, if the 
 
 The conjecture is that for every positive integer n, the sequence so defined above eventually has the number 1 as a value. 
 
-![Collatz Sequence for 77,031](https://github.com/jomega-github/recursion/edit/master/collatz/collatz-77031.png)
+![Collatz Sequence for 77031](https://github.com/jomega-github/recursion/edit/master/collatz/collatz-77031.png)
 
 For positive integer n, if we say the sequence is S(0), S(1), S(2), ...  then the smallest i such that S(i) = 1 is called the total stopping time of n. I define collatz(n) to be that stopping time of n. So that collatz() is a total function on the domain N, define collatz(n) to be -1 if there is no such i; i.e. the sequence fails to have any term that is 1.
 
