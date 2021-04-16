@@ -13,6 +13,9 @@ While factorial(n) may first be thought of as the product of all positive intege
 factorial(0) = 1 and for n > 0, factorial(n) = n* factorial(n-1). That is, the domain of factorial is N, and its codomain is N+.
 
 <h2>Computer Limitations</h2>
+Computer limitations cause a few issues with programming the factorial function.
+
+<h3>Variable Type Size Limits</h3>
 The factorial function grows very fast; faster than all polynomials and exponential functions. Hence, for large n, computing factorial(n) on a computer can be an issue. In some computer languages one would quickly exceed the maximum value allowed for the return type; say an "int". In Python, when the value gets large, Python changes the type to allow very large positive integers. However, at some value of n, one will exceed the capabilities of the machine! However, there is another issue with computer language environments; the call stack.
 
 <h3>The Call Stack</h3>
