@@ -5,7 +5,7 @@ Image from https://commons.wikimedia.org/wiki/File:Tower_of_Hanoi.jpeg
 
 From the Wikipedia page:
 
-The objective of the puzzle is to move the entire stack to last rod, obeying the following simple rules:  
+The objective of the puzzle is to move the entire stack to the last rod, obeying the following simple rules:  
 1.  Only one disk may be moved at a time.
 2.  Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod.
 3.  No disk may be placed on top of a disk which is smaller than it.
