@@ -1,4 +1,4 @@
-<h1>The Factorial Function and Recursion
+<h1>The Factorial Function and Recursion</h1>
 This is the usual function one sees given as a first example of a recursively defined function. That is, a function defined in terms of itself.
 
 See:
@@ -12,7 +12,7 @@ Note that there are multiple definitions for "function" as well as for "recursio
 While factorial(n) may first be thought of as the product of all positive integers less than or equal to n, it is useful to have factorial(0) defined. The reasons are well explained on the Wikipedia link above. Hence, with N being the natural numbers, and N+ being the positive integers, we have factorial:N -> N+ defined recursively as
 factorial(0) = 1 and for n > 0, factorial(n) = n* factorial(n-1). That is, the domain of factorial is N, and its codomain is N+.
 
-<h2>Computer Limitations
+<h2>Computer Limitations</h2>
 The factorial function grows very fast; faster than all polynomials and exponential functions. Hence, for large n, computing factorial(n) on a computer can be an issue. In some computer languages one would quickly exceed the maximum value allowed for the return type; say an "int". In Python, when the value gets large, Python changes the type to allow very large positive integers. However, at some value of n, one will exceed the capabilities of the machine! However, there is another issue with computer language environments; the call stack.
 
 Everytime a computer program calls a function (subroutine), it creates a call frame. That call frame contains the current execution pointer, and all the local variables and their values. The call frame is put in a call stack. When the code finally "returns" from the called function, the call frame is "popped" and the environment is reset to start execution where it left off, with all the local variables reinstated.
