@@ -12,12 +12,14 @@ The run time behavior of fib_recursive() is an excellent example of why one shou
 
 <h2>Usage</h2>
 
-> usage: fib.py [-h] n
-> 
-> Computes fib(n)
-> 
-> positional arguments:
->   n           argument of fib function
-> 
-> optional arguments:
->   -h, --help  show this help message and exit
+````
+usage: fib.py [-h] n
+
+Computes fib(n)
+
+positional arguments:
+  n           argument of fib function
+
+optional arguments:
+  -h, --help  show this help message and exit
+````
