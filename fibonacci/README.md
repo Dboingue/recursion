@@ -18,8 +18,8 @@ usage: fib.py [-h] n
 Computes fib(n)
 
 positional arguments:
-  n           argument of fib function
+  n            argument of fib function
 
 optional arguments:
-  -h, --help  show this help message and exit
+  -h, --help   show this help message and exit
 ````
