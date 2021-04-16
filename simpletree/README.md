@@ -10,12 +10,12 @@ This subproject is an example of using recursive programming to define, initiali
 > 
 > positional arguments:
 > 
->   n                    number of nodes
+>     n number of nodes
 > 
 > optional arguments:
 > 
->   -h, --help           show this help message and exit
+>    -h, --help           show this help message and exit
 >   
->   --max MAX            maximum value for nodes
+>    --max MAX            maximum value for nodes
 >   
->   --use_debug_problem  use a special problem for debugging
+>    --use_debug_problem  use a special problem for debugging
