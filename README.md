@@ -7,7 +7,8 @@ This project was mainly an exercise in learning Python.
 Dependencies:
 - Python version 3.8.2.
 - Packages:
-matplotlib      3.4.1, numpy           1.20.2
+  + matplotlib      3.4.1
+  + numpy           1.20.2
 
 Each directory contains a main Python file which can be run from the command line or imported.
 Each directory contains a Python script create_sample_output.py, and the file(s) created by running that script. You can test your environment and ability to use the programs by running this script and comparing your output with the file(s) here.
