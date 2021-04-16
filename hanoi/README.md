@@ -16,12 +16,14 @@ My program outputs the required move and a text rendering of the puzzle at each 
 
 <h2>Usage</h2>
 
-> usage: hanoi.py [-h] n
-> 
-> Solves Tower of Hanoi for n disks.
-> 
-> positional arguments:
->   n           number of disks
-> 
-> optional arguments:
->   -h, --help  show this help message and exit
+````
+usage: hanoi.py [-h] n
+
+Solves Tower of Hanoi for n disks.
+
+positional arguments:
+  n           number of disks
+
+optional arguments:
+  -h, --help  show this help message and exit
+````
