@@ -21,8 +21,8 @@ collatz(n) = the smallest i such that S(i) = 1, if there is such an i, and S(i) 
 
 NB: An Intuitionist mathematician might not accept that collatz() so defined above is a total function on N+. 95% of mathematician would say it is a total function. They would say that it is a total function because either the sequence has 1 has a term or it doesn't. But the Intuitionist will not accept De Morgan's law applied to an infinite set without a (constructive) proof. As the following Wikipedia page says:
 
->>Similarly, to assert that A or B holds, to an intuitionist, is to claim that either A or B can be proved. In particular, the law of excluded middle, "A or not A", is not accepted as a valid principle. For example, if A is some mathematical statement that an intuitionist has not yet proved or disproved, then that intuitionist will not assert the truth of "A or not A". However, the intuitionist will accept that "A and not A" cannot be true. Thus the connectives "and" and "or" of intuitionistic logic do not satisfy de Morgan's laws as they do in classical logi  
-
+>>Similarly, to assert that A or B holds, to an intuitionist, is to claim that either A or B can be proved. In particular, the law of excluded middle, "A or not A", is not accepted as a valid principle. For example, if A is some mathematical statement that an intuitionist has not yet proved or disproved, then that intuitionist will not assert the truth of "A or not A". However, the intuitionist will accept that "A and not A" cannot be true. Thus the connectives "and" and "or" of intuitionistic logic do not satisfy de Morgan's laws as they do in classical logic.  
+>>
 See: https://en.wikipedia.org/wiki/Intuitionism  
 
 See: https://en.wikipedia.org/wiki/Collatz_conjecture  
