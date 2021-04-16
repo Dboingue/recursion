@@ -14,16 +14,17 @@ factorial(0) = 1 and for n > 0, factorial(n) = n* factorial(n-1). That is, the d
 
 <h2>Usage</h2>
 
-> usage: factorial.py [-h] n
-> 
-> Computes factorial(n)
-> 
-> positional arguments:
->   n           argument of factorial function
-> 
-> optional arguments:
->   -h, --help  show this help message and exit
+````
+usage: factorial.py [-h] n
 
+Computes factorial(n)
+
+positional arguments:
+  n           argument of factorial function
+
+optional arguments:
+  -h, --help  show this help message and exit
+````
 
 <h2>Computer Limitations</h2>
 Computer limitations cause a few issues with programming the factorial function.
